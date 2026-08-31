@@ -1,4 +1,2 @@
-def function_name(name):
-    return name
-
-print(function_name("Donna"))
+def my_name():
+    return "Donna"
