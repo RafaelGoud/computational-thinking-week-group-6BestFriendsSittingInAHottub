@@ -1,3 +1,5 @@
-name = input()
+def function_name(name):
+    return name
 
-print(f"{name}")
+>>> function_name("Donna")
+"Donna"
