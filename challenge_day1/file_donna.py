@@ -1,5 +1,2 @@
-def function_name(name):
-    return name
-
->>> function_name("Donna")
-"Donna"
+def function_name():
+    return "Donna"
