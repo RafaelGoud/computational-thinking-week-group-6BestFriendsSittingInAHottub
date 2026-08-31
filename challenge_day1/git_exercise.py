@@ -1,0 +1,14 @@
+from file_oliwia import my_name
+from file_donna import function_name
+from file_milan import get_name
+from name import get_namee
+
+def our_team():
+    print("This is Team YourTeamNameHere. We are:")
+    print(my_name())
+    print(function_name())
+    print(get_name())
+    print(get_namee())
+
+
+our_team()

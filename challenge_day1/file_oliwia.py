@@ -1,4 +1,3 @@
-def my_function(name):
-  return name
+def my_name():
+  return "Oliwia"
 
-print(my_function("Oliwia"))
