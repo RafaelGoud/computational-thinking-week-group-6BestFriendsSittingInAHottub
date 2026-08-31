@@ -1,4 +1,3 @@
-def my_name(name):
-    return name
+def my_name():
+    return "Michelle"
 
-print(my_name("Michelle Doody"))
