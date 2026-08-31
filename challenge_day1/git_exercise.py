@@ -7,8 +7,8 @@ from file_anna import anna_name
 
 def our_team():
     print("This is Team YourTeamNameHere. We are:")
+    print(my_namee())
     print(my_name())
-    print(function_name())
     print(get_name())
     print(get_namee())
     print(my_namee())
