@@ -1,4 +1,4 @@
-def fibonacci(x):
+def solution_station_1(x):
     if x == 0:
         return 0
     if x == 1:
