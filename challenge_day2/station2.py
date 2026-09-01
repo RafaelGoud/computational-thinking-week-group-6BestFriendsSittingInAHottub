@@ -1,4 +1,4 @@
-def date_chinese=(date_str):
+def solution_station_2=(date_str):
     chinese_days = {
         0: "星期一",  # Monday
         1: "星期二",  # Tuesday
