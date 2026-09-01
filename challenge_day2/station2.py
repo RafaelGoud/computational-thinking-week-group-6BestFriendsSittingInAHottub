@@ -9,10 +9,9 @@ def solution_station_2(date_str):
         4: "金曜日",
         5: "土曜日",
         6: "日曜日",
-
     }
     
-    date_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+    date_obj = datetime.strptime(date_str, "%Y-%m-%d")
     weekday = date_obj.weekday()
     
     return japanese_days[weekday]
