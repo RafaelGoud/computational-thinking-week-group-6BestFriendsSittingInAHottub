@@ -27,4 +27,5 @@ def solution_station_5(station5_input):
         return 3
     elif station5_input in team_four:
         return 4
-
+    else:
+        return none
