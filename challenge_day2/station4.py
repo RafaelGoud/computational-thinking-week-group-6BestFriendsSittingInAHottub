@@ -1,6 +1,6 @@
 def solution_station_4(num):
     if num % 2 == 0:
-        final_value = True
-    else:
         final_value = False
+    else:
+        final_value = True
     return final_value
