@@ -9,7 +9,7 @@ def date_chinese=(date_str):
         6: "星期日",  # Sunday
     }
     
-    date_obj = datetime.strptime(date_str, "%m-%d-%Y")
+    date_obj = datetime.strptime(date_str, "%Y-%m-%d")
     weekday = date_obj.weekday()
     
     return chinese_day[weekday]
