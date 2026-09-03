@@ -32,19 +32,4 @@ for col_name in names(people_df)[2:end]
     quartiles = quantile(numeric_vals, [0.25, 0.5, 0.75])
 
     # Replace numeric values with categories; leave missing as missing and non-numeric as "low"
-    new_col = map(x -> x === missing ? missing : (x isa Number ? classify_score(Float64(x), quartiles) : "low"), col_data)
-    people_df[!, col_name] = new_col
-end
-
-# Save the modified DataFrame back to a new CSV file next to the original testdata
-CSV.write(joinpath(@__DIR__, "..", "fulldata", "data4.csv"), people_df)
-
-# Save the modified DataFrame back to a new TXT file (write header + rows)
-txt_path = joinpath(@__DIR__, "..", "fulldata", "data4.txt")
-open(txt_path, "w") do io
-    println(io, join(names(people_df), ','))
-    for row in eachrow(people_df)
-        vals = [ismissing(row[c]) ? "" : string(row[c]) for c in names(people_df)]
-        println(io, join(vals, ','))
-    end
-end
+    new_col = map(x -> x === missing ? missing : (x isa Number ? classify_score(F
