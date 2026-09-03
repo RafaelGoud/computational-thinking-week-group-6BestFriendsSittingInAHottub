@@ -52,7 +52,7 @@ func main() {
 	defer csvFile.Close()
 
 	writer := csv.NewWriter(csvFile)
-	defer writer.Error()
+	defer writer.Flush()
 
 	// Write header
 	err = writer.Write([]string{"Name", "Technical Skills", "Soft Skills", "Business Skills", "Creative Skills", "Academic Skills"})
