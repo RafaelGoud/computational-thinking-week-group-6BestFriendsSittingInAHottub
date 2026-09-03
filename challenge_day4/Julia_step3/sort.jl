@@ -1,7 +1,7 @@
 using DataFrames, CSV, Statistics, DelimitedFiles
 
 # Read the CSV file into a DataFrame (testdata is in the parent challenge_day4 folder)
-people_df = CSV.File(joinpath(@__DIR__, "..", "testdata", "data3.csv")) |> DataFrame
+people_df = CSV.File(joinpath(@__DIR__, "..", "fulldata", "data3.csv")) |> DataFrame
 
 # Function to classify a score based on quartiles
 function classify_score(score, quartiles)
@@ -37,7 +37,7 @@ for col_name in names(people_df)[2:end]
 end
 
 # Save the modified DataFrame back to a new CSV file next to the original testdata
-CSV.write(joinpath(@__DIR__, "..", "testdata", "data4.csv"), people_df)
+CSV.write(joinpath(@__DIR__, "..", "fulldata", "data3_amended.csv"), people_df)
 
 # Save the modified DataFrame back to a new TXT file
 writedlm(joinpath(@__DIR__, "..", "fulldata", "data3.txt"), people_df, ',')
