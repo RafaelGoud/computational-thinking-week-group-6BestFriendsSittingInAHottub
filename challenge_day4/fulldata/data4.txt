@@ -1,3 +1,4 @@
+Name,Technical Skills,Soft Skills,Business Skills,Creative Skills,Academic Skills
 Leo,middle,super,good,good,middle
 Liam,super,middle,low,middle,good
 Neil,super,low,good,middle,good
