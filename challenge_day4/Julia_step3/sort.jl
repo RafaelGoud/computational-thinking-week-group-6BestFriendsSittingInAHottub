@@ -37,7 +37,14 @@ for col_name in names(people_df)[2:end]
 end
 
 # Save the modified DataFrame back to a new CSV file next to the original testdata
-CSV.write(joinpath(@__DIR__, "..", "fulldata", "data3_amended.csv"), people_df)
+CSV.write(joinpath(@__DIR__, "..", "fulldata", "data4.csv"), people_df)
 
-# Save the modified DataFrame back to a new TXT file
-writedlm(joinpath(@__DIR__, "..", "fulldata", "data3.txt"), people_df, ',')
+# Save the modified DataFrame back to a new TXT file (write header + rows)
+txt_path = joinpath(@__DIR__, "..", "fulldata", "data4.txt")
+open(txt_path, "w") do io
+    println(io, join(names(people_df), ','))
+    for row in eachrow(people_df)
+        vals = [ismissing(row[c]) ? "" : string(row[c]) for c in names(people_df)]
+        println(io, join(vals, ','))
+    end
+end
