@@ -4,13 +4,13 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 )
 
 type Person struct {
 	Name           string `json:"name"`
-	TechnicalSkills float64    `json:"Technical methods"`
+	TechnicalSkills float64    `json:"Technical Skills"`
 	SoftSkills      float64    `json:"Soft Skills"`
 	BusinessSkills  float64    `json:"Business Skills"`
 	CreativeSkills  float64    `json:"Creative Skills"`
@@ -23,14 +23,14 @@ type People struct {
 
 func main() {
 	// Read the JSON file
-	jsonFile, err := os.Open("data2.json")
+	jsonFile, err := os.Open("../testdata/data2.json")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 	defer jsonFile.Close()
 
-	jsonBytes, err := ioutil.ReadAll(jsonFile)
+	jsonBytes, err := io.ReadAll(jsonFile)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
@@ -44,7 +44,7 @@ func main() {
 	}
 
 	// Create a CSV file
-	csvFile, err := os.Create("data3.csv")
+	csvFile, err := os.Create("../testdata/data3.csv")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
@@ -52,7 +52,7 @@ func main() {
 	defer csvFile.Close()
 
 	writer := csv.NewWriter(csvFile)
-	defer writer.Flush()
+	defer writer.Error()
 
 	// Write header
 	err = writer.Write([]string{"Name", "Technical Skills", "Soft Skills", "Business Skills", "Creative Skills", "Academic Skills"})
