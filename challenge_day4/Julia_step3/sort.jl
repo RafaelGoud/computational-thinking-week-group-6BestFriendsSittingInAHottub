@@ -37,7 +37,7 @@ for col_name in names(people_df)[2:end]
 end
 
 # Save the modified DataFrame back to a new CSV file next to the original testdata
-CSV.write(joinpath(@__DIR__, "..", "testdata", "data3_amended.csv"), people_df)
+CSV.write(joinpath(@__DIR__, "..", "testdata", "data4.csv"), people_df)
 
 # Save the modified DataFrame back to a new TXT file
-# writedlm(joinpath(@__DIR__, "..", "testdata", "data3_amended.txt"), people_df, ',')
+writedlm(joinpath(@__DIR__, "..", "fulldata", "data3.txt"), people_df, ',')
